@@ -26,6 +26,11 @@
             </select>
             <button type="submit">Soumettre</button>
         </form>
+
+        <form action="" method="POST">
+            <input type="text" name="newRace" placeholder="Ajouter nouvelle race..." required>
+            <button type="sumbit">Soumettre</button>
+        </form>
     </ul>
 </body>
 </html>

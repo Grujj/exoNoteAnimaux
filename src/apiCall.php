@@ -29,8 +29,22 @@ function add(){
     $insert->execute();
 }
 
+function addRace(){
+    global $pdo;
+
+    $insert = $pdo->prepare("INSERT INTO race (type)
+        VALUE(?);");
+
+    $insert->bindParam(1, $_REQUEST['newRace']);
+    
+    $insert->execute();
+}
+
 if(isset($_REQUEST['nom']) && isset($_REQUEST['race'])){
     add();
+}
+else if(isset($_REQUEST['newRace'])){
+    addRace();
 }
 
 $animaux = selectAnimaux();
